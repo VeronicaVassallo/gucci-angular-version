@@ -1,0 +1,311 @@
+#logo {
+  color: white;
+  font-size: 180pt;
+  letter-spacing: 90px;
+  opacity: 0.8;
+  position: fixed;
+  top: 0%;
+  left: 15%;
+  font-family: "Garamond";
+  z-index: 1052;
+}
+
+.logoAnimation {
+  animation-name: animationLogo;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.logoAnimationReverse {
+  animation-name: animationLogoReverse;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+/*Aniamtion Logo*/
+/* The animation code */
+@keyframes animationLogo {
+  0% {
+    color: white;
+    font-size: 180pt;
+    letter-spacing: 90px;
+    top: 0%;
+    left: 15%;
+    z-index: 1052;
+  }
+
+  100% {
+    color: black;
+    font-size: 20pt;
+    letter-spacing: 10px;
+    top: 2%;
+    left: 45%;
+    z-index: 1054;
+  }
+}
+
+@keyframes animationLogoReverse {
+  0% {
+    color: black;
+    font-size: 20pt;
+    letter-spacing: 10px;
+    top: 2%;
+    left: 45%;
+    z-index: 1054;
+  }
+
+  100% {
+    color: white;
+    font-size: 180pt;
+    letter-spacing: 90px;
+    top: 0%;
+    left: 15%;
+    z-index: 1052;
+  }
+}
+
+.gucci_header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: dezoom 2s ease forwards;
+}
+
+@keyframes dezoom {
+  0% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+#contact {
+  font-size: small;
+}
+
+.buttonHeaderBorse {
+  position: sticky;
+  z-index: 1050;
+  text-align: center;
+  cursor: pointer;
+  top: 70%;
+  right: 38%;
+}
+
+#borseHeader {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  animation: showButton 0.5s ease-in forwards;
+}
+/*button Esplora la collezione*/
+#buttonExploreCollection {
+  font-size: small;
+  font-weight: bold;
+  width: 20em;
+  margin-left: 41%;
+  padding: 1%;
+  border-radius: 2px;
+  animation: showButton 1s ease-out 1ms forwards;
+  transform: translateY(-25px);
+}
+
+@keyframes showButton {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 12;
+    transform: translateY(-25px);
+  }
+}
+
+.buttonHeaderBorse #borseHeader + div:hover {
+  padding: 11px;
+  width: 19em;
+}
+
+/*media query mobile version*/
+@media only screen and (max-width: 767px) {
+  #logo {
+    transform: scale(40%);
+    letter-spacing: 35px;
+    top: -3% !important;
+    left: -1.1em !important;
+    z-index: 1052;
+  }
+
+  #contact {
+    visibility: hidden !important;
+  }
+
+  .logoAnimation {
+    animation-name: animationLogoForMobile;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .logoAnimationReverse {
+    animation-name: animationLogoReverseForMobile;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .gucci_header {
+    height: 85vh;
+    background-size: cover !important;
+    background-position: center;
+  }
+
+  .buttonHeaderBorse {
+    transform: translateX(0%) translateY(-80px) !important;
+  }
+  #borseHeader {
+    transform: translateY(0px) !important;
+  }
+  .buttonHeaderBorse #borseHeader + div {
+    transform: translateX(-35%) !important;
+    padding: 4%;
+  }
+
+  .animationForMobile {
+    font-size: smaller;
+    transform: translateY(3em);
+    margin-top: 0%;
+    opacity: 0;
+    animation: upDownButtonHeader 2s ease 2s infinite alternate-reverse;
+  }
+}
+
+/*animation for up and down of buttone on the haeder -Only for mobile*/
+@keyframes upDownButtonHeader {
+  0% {
+    transform: translateY(3em);
+    margin-top: 0%;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(1em);
+    margin-top: 2%;
+    opacity: 9;
+  }
+}
+/*Animation logo mobile*/
+@keyframes animationLogoForMobile {
+  0% {
+    color: white;
+    transform: scale(40%);
+    letter-spacing: 35px;
+    top: -3% !important;
+    left: -20% !important;
+    z-index: 1052;
+  }
+  100% {
+    color: black;
+    transform: scale(14%) translateY(-220%) translateX(-80%);
+    letter-spacing: 15px;
+    padding-left: 8%;
+    z-index: 1054;
+  }
+}
+
+@keyframes logoAnimationReverseoForMobile {
+  0% {
+    color: black;
+    transform: scale(14%) translateY(-220%) translateX(-80%);
+    letter-spacing: 15px;
+    padding-left: 8%;
+    z-index: 1054;
+  }
+  100% {
+    color: white;
+    font-size: 200pt;
+    z-index: 1052;
+  }
+}
+
+/*Media query per Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #logo {
+    transform: scale(70%);
+    letter-spacing: 35px;
+    top: -3% !important;
+    left: -20% !important;
+    z-index: 1052;
+  }
+
+  #contact {
+    visibility: hidden !important;
+  }
+
+  .logoAnimation {
+    animation-name: animationLogoForIPad;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .logoAnimationReverse {
+    animation-name: logoAnimationReverseoForIPad;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .gucci_header {
+    height: 85vh;
+    background-size: cover !important;
+    background-position: center;
+  }
+
+  .buttonHeaderBorse {
+    transform: translateX(0%) translateY(-80px) !important;
+  }
+  #borseHeader {
+    transform: translateY(0px) !important;
+  }
+  .buttonHeaderBorse #borseHeader + div {
+    transform: translateX(-35%) !important;
+    padding: 4%;
+  }
+
+  .animationForMobile {
+    font-size: smaller;
+    transform: translateY(3em);
+    margin-top: 0%;
+    opacity: 0;
+    animation: upDownButtonHeader 2s ease 2s infinite alternate-reverse;
+  }
+}
+
+/*Animation logo IPad*/
+@keyframes animationLogoForIPad {
+  0% {
+    color: white;
+    transform: scale(70%);
+    letter-spacing: 35px;
+    top: -3% !important;
+    left: -20% !important;
+    z-index: 1052;
+  }
+  100% {
+    color: black;
+    transform: scale(14%) translateY(-220%) translateX(-170%);
+    letter-spacing: 15px;
+    z-index: 1054;
+  }
+}
+
+@keyframes logoAnimationReverseoForIPad {
+  0% {
+    color: black;
+    transform: scale(14%) translateY(-220%) translateX(-170%);
+    letter-spacing: 15px;
+    z-index: 1054;
+  }
+  100% {
+    color: white;
+    font-size: 200pt;
+    z-index: 1052;
+  }
+}
