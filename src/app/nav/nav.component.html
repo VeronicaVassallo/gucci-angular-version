@@ -42,15 +42,24 @@
           (input)="onChangeValue($event)"
         />
       </div>
-      <div class="p-3 pt-0 mt-0 me-3 fs-8 border-bottom cursor">CANCELLA</div>
+      <div
+        class="p-3 pt-0 mt-0 me-3 fs-8 border-bottom cursor"
+        (click)="onDeleteValue()"
+      >
+        CANCELLA
+      </div>
     </div>
-    <div id="noResult"></div>
-    <div class="d-flex justify-content-around">
+    <div id="noResult" *ngIf="result; else noResulBlock"></div>
+    <ng-template #noResulBlock
+      >SPIACENTI, IMPOSSIBILE TROVARE RISULTATI CORRISPONDENTI ALLA TUA
+      RICERCA.</ng-template
+    >
+    <div class="containerList d-flex justify-content-around">
       <div class="col-menu">
         <h5>Ricerche di Tendenza</h5>
         <ul class="ps-0">
           <li>
-            <a class="text-dark" href="*">
+            <a class="text-dark ms-2" href="*">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -67,7 +76,7 @@
             >
           </li>
           <li>
-            <a class="text-dark" href="*">
+            <a class="text-dark ms-2" href="*">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -84,7 +93,7 @@
             </a>
           </li>
           <li>
-            <a class="text-dark" href="*">
+            <a class="text-dark ms-2" href="*">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -101,7 +110,7 @@
             </a>
           </li>
           <li>
-            <a class="text-dark" href="*">
+            <a class="text-dark ms-2" href="*">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -130,13 +139,22 @@
           </li>
         </ul>
       </div>
-      <div id="resultSearch" class="col-menu d-flex flex-column pt-1">
-        Risultato ricerca
-        <ul>
-          <li *ngFor="let product of productsFiltered">
-            {{ product.nameBag }} - {{ product.price }}
-          </li>
-        </ul>
+      <div
+        id="resultSearch"
+        class="col-menu container-fluid d-flex flex-column pt-1"
+      >
+        <div class="row">
+          <div
+            *ngFor="let product of productsFiltered"
+            class="col-4 bg-success sizeImg m-1"
+          >
+            <img
+              class="w-100"
+              src="{{ product.img }}"
+              alt="{{ product.nameBag }}"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavComponent {
   menuInvisible = true;
   searchInvisible = true;
+  result = true;
 
   /*Products list*/
   products: { nameBag: string; img: string; price: string }[] = [
@@ -28,17 +29,47 @@ export class NavComponent {
     },
     {
       nameBag: 'cintura',
-      img: 'https://s3.amazonaws.com/images.cumini.com/P24---gucci---411924+kgdhn9643.JPG',
+      img: 'https://s3-eu-west-1.amazonaws.com/img.frmoda.com/accessori/gucci/3705/370543CWC1G9643beige-01.jpg',
       price: '1200,00 €',
     },
     {
       nameBag: 'cintura marrone',
-      img: 'https://s3.amazonaws.com/images.cumini.com/P24---gucci---411924+kgdhn9643.JPG',
+      img: 'https://s3-eu-west-1.amazonaws.com/img.frmoda.com/accessori/gucci/3705/370543CWC1G9643beige-01.jpg',
       price: '1200,00 €',
     },
     {
       nameBag: 'cintura nera',
-      img: 'https://s3.amazonaws.com/images.cumini.com/P24---gucci---411924+kgdhn9643.JPG',
+      img: 'https://s3-eu-west-1.amazonaws.com/img.frmoda.com/accessori/gucci/3705/370543CWC1G9643beige-01.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa piccola',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa Grande',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa media',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa piccola',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa Grande',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
+      price: '1200,00 €',
+    },
+    {
+      nameBag: 'Borsa media',
+      img: 'https://dmluxurybrands.com/wp-content/uploads/2021/09/2597438287.jpg',
       price: '1200,00 €',
     },
   ];
@@ -66,7 +97,17 @@ export class NavComponent {
             .toLowerCase()
             .includes((<HTMLInputElement>e.target).value.toLowerCase());
         })
-        .slice(0, 6);
+        .slice(0, 9);
+
+      if (this.productsFiltered.length === 0) {
+        this.result = false;
+      } else {
+        this.result = true;
+      }
     }
+  }
+
+  onDeleteValue() {
+    this.productsFiltered = [];
   }
 }
