@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.css', '../commonStyle.css'],
 })
 export class NavComponent {
+  valueInput = '';
   menuInvisible = true;
   searchInvisible = true;
   result = true;
@@ -87,27 +88,26 @@ export class NavComponent {
   }
 
   /*method for filter array products */
-  onChangeValue(e: Event) {
-    if ((<HTMLInputElement>e.target).value.trim() === '') {
+  onChangeValue(word: string) {
+    this.valueInput = word;
+    if (this.valueInput.trim() === '') {
       this.productsFiltered = [];
     } else {
       this.productsFiltered = this.products
         .filter((product) => {
           return product.nameBag
             .toLowerCase()
-            .includes((<HTMLInputElement>e.target).value.toLowerCase());
+            .includes(this.valueInput.toLowerCase());
         })
         .slice(0, 9);
 
-      if (this.productsFiltered.length === 0) {
-        this.result = false;
-      } else {
-        this.result = true;
-      }
+      this.result = this.productsFiltered.length !== 0;
     }
   }
 
   onDeleteValue() {
+    this.valueInput = '';
     this.productsFiltered = [];
+    this.result = true;
   }
 }

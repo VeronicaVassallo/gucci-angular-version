@@ -39,7 +39,8 @@
           type="text"
           name="search"
           id="search"
-          (input)="onChangeValue($event)"
+          [(ngModel)]="valueInput"
+          (ngModelChange)="onChangeValue($event)"
         />
       </div>
       <div

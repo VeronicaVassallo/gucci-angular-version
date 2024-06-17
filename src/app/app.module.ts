@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   BrowserModule,
   provideClientHydration,
@@ -13,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
