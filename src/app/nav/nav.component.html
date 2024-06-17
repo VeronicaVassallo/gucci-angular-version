@@ -1,6 +1,6 @@
 <div class="d-none" *ngIf="menuInvisible; else menuBlock"></div>
-<ng-template #menuBlock id="containerMenuOpened" class="position-fixed">
-  <div id="menuOpened" class="container-fluid position-absolute">
+<ng-template #menuBlock>
+  <div id="menuOpened" class="container-fluid position-absolute showMenuOpened">
     <div class="row">
       <div class="menuLeft col-8"></div>
       <div class="menuRight col-12 col-md-4 col-lg-4 bg-light">
@@ -55,90 +55,93 @@
       RICERCA.</ng-template
     >
     <div class="containerList d-flex justify-content-around">
-      <div class="col-menu">
-        <h5>Ricerche di Tendenza</h5>
-        <ul class="ps-0">
-          <li>
-            <a class="text-dark ms-2" href="*">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search cursor me-2"
-                viewBox="0 0 16 16"
+      <div class="d-flex flex-column flex-md-row flex-lg-row">
+        <div class="col-menu">
+          <h5>Ricerche di Tendenza</h5>
+          <ul class="ps-0">
+            <li>
+              <a class="text-dark ms-2" href="*">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search cursor me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+                Borse</a
               >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                />
-              </svg>
-              Borse</a
-            >
-          </li>
-          <li>
-            <a class="text-dark ms-2" href="*">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search cursor me-2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                />
-              </svg>
-              Scarpe
-            </a>
-          </li>
-          <li>
-            <a class="text-dark ms-2" href="*">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search cursor me-2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                />
-              </svg>
-              Cinture
-            </a>
-          </li>
-          <li>
-            <a class="text-dark ms-2" href="*">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search cursor me-2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                />
-              </svg>
-              Portafogli
-            </a>
-          </li>
-        </ul>
+            </li>
+            <li>
+              <a class="text-dark ms-2" href="*">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search cursor me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+                Scarpe
+              </a>
+            </li>
+            <li>
+              <a class="text-dark ms-2" href="*">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search cursor me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+                Cinture
+              </a>
+            </li>
+            <li>
+              <a class="text-dark ms-2" href="*">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search cursor me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+                Portafogli
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-menu">
+          <h5>Novità</h5>
+          <ul class="ps-0">
+            <li>
+              <a class="text-dark" href="*">Donna</a>
+            </li>
+            <li>
+              <a class="text-dark" href="*">Uomo</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-menu">
-        <h5>Novità</h5>
-        <ul class="ps-0">
-          <li>
-            <a class="text-dark" href="*">Donna</a>
-          </li>
-          <li>
-            <a class="text-dark" href="*">Uomo</a>
-          </li>
-        </ul>
-      </div>
+
       <div
         id="resultSearch"
         class="col-menu container-fluid d-flex flex-column pt-1"
@@ -146,7 +149,7 @@
         <div class="row">
           <div
             *ngFor="let product of productsFiltered"
-            class="col-4 bg-success sizeImg m-1"
+            class="col-6 col-md-4 col-lg-4 sizeImg m-1"
           >
             <img
               class="w-100"

@@ -8,19 +8,11 @@
   font-size: 8pt;
   padding-top: 2px;
 }
-/*this "showMenuOpened" class is added to containerMenuOpened with js*/
 .showMenuOpened {
-  position: relative;
+  position: fixed !important;
   z-index: 1061;
   width: 100vw;
   height: 100vh !important;
-  overflow: hidden !important;
-}
-/*container menu opened*/
-#containerMenuOpened {
-  z-index: 1060;
-}
-.hiddenOverflow {
   overflow: hidden;
 }
 .menuLeft {
@@ -109,22 +101,33 @@
     top: -90%;
     right: -85%;
   }
-  .searchBox {
+  #searchMenu {
     top: 8.3%;
-    right: 0%;
-    width: 100%;
+    right: -5%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
   }
-  .searchBox input {
-    width: 15em !important;
+  #searchMenu input {
+    width: 13em !important;
+    margin-left: 2%;
+  }
+
+  h5 + ul,
+  h5 {
+    margin-bottom: 15%;
+    margin-left: 10%;
+  }
+  #resultSearch .sizeImg {
+    width: 100px;
+    height: 100px;
   }
 
   #containerIconsMenu {
     width: 50%;
   }
 }
-
+/*media query IPad version*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .menu {
     display: none;

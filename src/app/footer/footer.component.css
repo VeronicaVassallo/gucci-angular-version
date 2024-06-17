@@ -1,0 +1,86 @@
+footer {
+  background-color: black;
+  overflow: hidden;
+  font-size: 9pt;
+}
+.flex-size:first-of-type {
+  width: 25% !important;
+}
+.flex-size:nth-child(2) {
+  width: 25% !important;
+}
+.flex-size:last-of-type {
+  width: 50%;
+  padding-right: 5%;
+}
+
+footer ul li {
+  list-style: none;
+  padding: 15px;
+}
+hr {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-weight: bolder;
+}
+/*collapsed section start */
+.bg-footer {
+  background-color: black;
+}
+.buttonCollapse {
+  border-bottom: solid 1px white;
+  padding-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*collapsed section end */
+
+.logoFooter {
+  width: 100px;
+  padding-left: 2%;
+}
+
+#gucciFooter {
+  font-size: 180pt;
+  letter-spacing: 90px;
+  font-family: "Garamond";
+  text-align: center;
+}
+/*media query mobile version*/
+@media only screen and (max-width: 767px) {
+  footer .listFooter {
+    display: none;
+  }
+
+  .flex-size:last-of-type {
+    width: 100% !important;
+  }
+  .containerBrands {
+    padding-left: 10px !important;
+  }
+
+  #gucciFooter {
+    font-size: 60pt;
+    letter-spacing: 15px;
+  }
+}
+
+/*Media query per Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  footer .listFooter {
+    display: none;
+  }
+
+  .flex-size:last-of-type {
+    width: 100% !important;
+  }
+  .containerBrands {
+    padding-left: 10px !important;
+  }
+
+  #gucciFooter {
+    font-size: 60pt;
+    letter-spacing: 15px;
+  }
+}
