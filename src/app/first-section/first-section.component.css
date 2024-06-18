@@ -1,0 +1,119 @@
+/*first section Men and Women*/
+
+/*Conatainer card img*/
+.section-ContainerMW {
+  cursor: pointer;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cardMW {
+  width: 48%;
+  margin-left: 1%;
+}
+
+/*container stycky elements*/
+.containerSectionFirst {
+  height: 30%;
+  position: relative;
+  top: -30%;
+}
+
+.stickycontainer {
+  position: sticky;
+  z-index: 1050;
+  top: 20%;
+}
+.stickycontainer h4 {
+  text-align: center;
+  padding-bottom: 2%;
+}
+.buttonSectionMWContainer {
+  position: relative;
+  z-index: 1048;
+  transform: translateY(-3em);
+  width: 100%;
+  height: 3em;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.buttonSectionMW {
+  position: relative;
+  z-index: 1049;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+/*media query mobile version*/
+@media only screen and (max-width: 767px) {
+  #sectionMW {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .cardMW {
+    width: 98%;
+    height: 64vh;
+    margin-left: 1%;
+  }
+  /*contener of img cardMW*/
+  .section-ContainerMW {
+    cursor: pointer;
+    height: 64vh;
+    overflow: hidden;
+  }
+
+  .section-ContainerMW img {
+    object-fit: cover;
+    width: 100%;
+    height: 64vh;
+  }
+
+  .containerSectionFirst {
+    transform: translateY(5%);
+  }
+
+  .featured {
+    transform: translateY(80px);
+    padding-bottom: 6%;
+  }
+}
+
+/*Media query per Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #sectionMW {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .cardMW {
+    width: 98%;
+    height: 64vh;
+    margin-left: 1%;
+  }
+  /*contener of img cardMW*/
+  .section-ContainerMW {
+    cursor: pointer;
+    height: 64vh;
+    overflow: hidden;
+  }
+
+  .section-ContainerMW img {
+    object-fit: cover;
+    width: 100%;
+    height: 64vh;
+  }
+
+  .containerSectionFirst {
+    transform: translateY(5%);
+  }
+
+  .featured {
+    transform: translateY(80px);
+    padding-bottom: 6%;
+  }
+}

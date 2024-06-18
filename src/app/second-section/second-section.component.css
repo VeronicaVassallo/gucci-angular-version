@@ -1,0 +1,42 @@
+.containerSecondSectionImg img {
+  width: 100%;
+  object-fit: cover;
+}
+.fontSize {
+  width: 75%;
+  font-size: 12pt;
+}
+.fs-8 {
+  font-size: small;
+}
+/*media query mobile version*/
+@media only screen and (max-width: 767px) {
+  .containerSecondSectionImg {
+    width: 100% !important;
+    margin: 10px !important;
+  }
+  .containerSecondSectionText {
+    width: 100% !important;
+    padding-top: 8% !important;
+  }
+  .containerSecondSectionText p {
+    width: 100%;
+    padding: 0px 13px;
+  }
+}
+
+/*Media query per Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .containerSecondSectionImg {
+    width: 100% !important;
+    margin: 10px !important;
+  }
+  .containerSecondSectionText {
+    width: 100% !important;
+    padding-top: 8% !important;
+  }
+  .containerSecondSectionText p {
+    width: 100%;
+    padding: 0px 13px;
+  }
+}

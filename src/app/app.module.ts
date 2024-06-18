@@ -11,12 +11,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { FirstSectionComponent } from './first-section/first-section.component';
+import { SecondSectionComponent } from './second-section/second-section.component';
+import { VideoSectionComponent } from './video-section/video-section.component';
 
 //Services
 import { DataProductsService } from './services/data-products.service';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    NavComponent,
+    FooterComponent,
+    FirstSectionComponent,
+    SecondSectionComponent,
+    VideoSectionComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration(), DataProductsService],
   bootstrap: [AppComponent],

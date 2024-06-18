@@ -1,0 +1,86 @@
+/*third section for videos*/
+section:nth-child(3) h2 {
+  margin-top: 10%;
+  font-size: 35pt;
+}
+
+figure {
+  width: 30%;
+  text-align: center;
+}
+figcaption h5 {
+  font-size: 12pt;
+  font-weight: 600;
+}
+video {
+  width: 100%;
+}
+/*media query mobile version*/
+@media only screen and (max-width: 767px) {
+  #containerVideos {
+    width: 300vw !important;
+    overflow: hidden;
+  }
+  section:last-of-type {
+    width: 100vw !important;
+    overflow: hidden;
+    padding-left: 0px !important;
+  }
+
+  figure {
+    width: 70vw !important;
+    margin-right: 0px !important;
+  }
+
+  figure:first-of-type {
+    transform: translateX(-50px);
+  }
+
+  figure:nth-child(2) {
+    transform: translateX(-45%);
+  }
+  figure video {
+    width: 100% !important;
+    height: 40vh !important;
+    object-fit: cover;
+  }
+  figcaption {
+    text-align: left;
+    width: 90%;
+  }
+}
+
+/*Media query per Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #containerVideos {
+    width: 300vw !important;
+    overflow: hidden;
+  }
+  section:last-of-type {
+    width: 100vw !important;
+    overflow: hidden;
+    padding-left: 0px !important;
+  }
+
+  figure {
+    width: 70vw !important;
+    margin-right: 0px !important;
+  }
+
+  figure:first-of-type {
+    transform: translateX(-50px);
+  }
+
+  figure:nth-child(2) {
+    transform: translateX(-45%);
+  }
+  figure video {
+    width: 100% !important;
+    height: 40vh !important;
+    object-fit: cover;
+  }
+  figcaption {
+    text-align: left;
+    width: 90%;
+  }
+}

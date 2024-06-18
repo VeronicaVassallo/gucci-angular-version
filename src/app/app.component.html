@@ -1,7 +1,9 @@
 <app-nav [dataParent]="notScroll"></app-nav>
 <app-header (scrollEvent)="onChildScroll($event)"></app-header>
-><!--Se lui scrolla , avvisa la nav.Quindi l'info notScroll che ho qui app-header deve
-salire verso il padre app-component e da app-component l'info deve essere passata alla nav (cosi da poter 
-aggiungere la class bg-white e fare la relativa animazione)  -->
-<main></main>
+<main>
+  <app-first-section></app-first-section>
+  <app-second-section></app-second-section>
+  <app-video-section></app-video-section>
+</main>
+
 <app-footer></app-footer>
