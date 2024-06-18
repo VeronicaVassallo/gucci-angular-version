@@ -17,6 +17,7 @@ import { VideoSectionComponent } from './video-section/video-section.component';
 
 //Services
 import { DataProductsService } from './services/data-products.service';
+import { MessageBallonComponent } from './message-ballon/message-ballon.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DataProductsService } from './services/data-products.service';
     FirstSectionComponent,
     SecondSectionComponent,
     VideoSectionComponent,
+    MessageBallonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration(), DataProductsService],
