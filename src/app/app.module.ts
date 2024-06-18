@@ -12,10 +12,13 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 
+//Services
+import { DataProductsService } from './services/data-products.service';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(), DataProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
