@@ -89,6 +89,40 @@
   }
 }
 
+.logoAnimation {
+  animation-name: animationLogo;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.logoAnimationReverse {
+  animation-name: animationLogoReverse;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+/*Aniamtion Logo*/
+/* The animation code */
+@keyframes animationLogo {
+  0% {
+    color: white;
+    font-size: 180pt;
+    letter-spacing: 90px;
+    top: 0%;
+    left: 15%;
+    z-index: 1052;
+  }
+
+  100% {
+    color: black;
+    font-size: 20pt;
+    letter-spacing: 10px;
+    top: 2%;
+    left: 45%;
+    z-index: 1054;
+  }
+}
+
 /*media query mobile version*/
 @media only screen and (max-width: 767px) {
   .menu {

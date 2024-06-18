@@ -1,6 +1,11 @@
 <header>
   <header class="gucci_header text-light" onscroll="toggleClassNav()">
-    <h1 id="logo">GUCCI</h1>
+    <h1
+      id="logo"
+      [ngClass]="notScroll ? 'logoAnimation text-dark' : 'logoAnimationReverse'"
+    >
+      GUCCI
+    </h1>
     <div class="buttonHeaderBorse">
       <h2 id="borseHeader">Borse</h2>
       <div id="buttonExploreCollection" class="bg-light text-dark mt-4">

@@ -168,7 +168,9 @@
 <nav
   id="nav"
   class="d-flex justify-content-between align-items-center position-fixed text-light"
+  [ngClass]="dataParent ? 'bg-white text-dark' : ''"
 >
+  <!--ToDo: rigo 171 rimuovi 5 > 2  e mettigli il dato che ti passa l'header notScroll(Se l'header sta scrollando gli aggiungi la classe bg-white) -->
   <div id="contact" class="d-flex ps-5 invisible">
     <div class="me-3">+</div>
     <div>Contattaci</div>

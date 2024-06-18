@@ -3,8 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'gucci-angular-version';
+  notScroll: boolean = true;
+  onChildScroll(value: boolean): void {
+    this.notScroll = value;
+    console.log('valore notScroll: ', value);
+  }
 }
