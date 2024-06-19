@@ -19,6 +19,10 @@ import { VideoSectionComponent } from './video-section/video-section.component';
 import { DataProductsService } from './services/data-products.service';
 import { MessageBallonComponent } from './message-ballon/message-ballon.component';
 
+//Bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +33,9 @@ import { MessageBallonComponent } from './message-ballon/message-ballon.componen
     SecondSectionComponent,
     VideoSectionComponent,
     MessageBallonComponent,
+    ModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [provideClientHydration(), DataProductsService],
   bootstrap: [AppComponent],
 })

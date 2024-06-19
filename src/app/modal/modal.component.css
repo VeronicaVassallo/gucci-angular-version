@@ -1,0 +1,4 @@
+.modal-content {
+  position: relative !important;
+  z-index: 1085 !important;
+}
