@@ -9,24 +9,32 @@
         name="email"
         id="email"
         placeholder="mario@rossi.com"
+        (change)="onChangeEmail($event)"
       />
       <br />
       <label for="password"> Password: </label>
       <br />
       <input
-        type="password"
+        type="text"
         name="password"
         id="password"
-        placeholder="*********"
+        (change)="onChangePassword($event)"
       />
       <br />
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        (click)="checkUsers()"
+      >
+        Accedi
+      </button>
       <hr />
       <a href="#" class="text-dark">Registrati</a>
     </div>
     <div class="modal-footer">
       <button
         type="button"
-        class="btn btn-outline-secondary"
+        class="btn btn-outline-danger"
         (click)="d('Cross click')"
       >
         Chiudi

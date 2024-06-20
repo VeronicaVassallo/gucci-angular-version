@@ -14,10 +14,11 @@ import { FooterComponent } from './footer/footer.component';
 import { FirstSectionComponent } from './first-section/first-section.component';
 import { SecondSectionComponent } from './second-section/second-section.component';
 import { VideoSectionComponent } from './video-section/video-section.component';
+import { MessageBallonComponent } from './message-ballon/message-ballon.component';
 
 //Services
 import { DataProductsService } from './services/data-products.service';
-import { MessageBallonComponent } from './message-ballon/message-ballon.component';
+import { UsersService } from './services/users.service';
 
 //Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +37,7 @@ import { ModalComponent } from './modal/modal.component';
     ModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
-  providers: [provideClientHydration(), DataProductsService],
+  providers: [provideClientHydration(), DataProductsService, UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

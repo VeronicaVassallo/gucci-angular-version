@@ -174,7 +174,13 @@
     <div class="me-3">+</div>
     <div>Contattaci</div>
   </div>
+
   <div id="containerIconsMenu" class="d-flex">
+    <div class="m-3" *ngIf="dataUsers.getAdminValue()">
+      <button type="button" class="btn btn-outline-secondary">
+        Aggiungi prodotto
+      </button>
+    </div>
     <div class="m-3">
       <svg
         xmlns="http://www.w3.org/2000/svg"

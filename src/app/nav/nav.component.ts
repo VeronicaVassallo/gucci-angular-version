@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 //services
 import { DataProductsService } from '../services/data-products.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,8 +10,12 @@ import { DataProductsService } from '../services/data-products.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private allProducts: DataProductsService) {}
+  constructor(
+    private allProducts: DataProductsService,
+    public dataUsers: UsersService
+  ) {}
   @Input() dataParent: boolean = true;
+  isAdminLogged = this.dataUsers.getAdminValue();
   valueInput = '';
   menuInvisible = true;
   searchInvisible = true;
