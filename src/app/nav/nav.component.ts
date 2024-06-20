@@ -24,12 +24,12 @@ export class NavComponent {
   productsFiltered: { nameBag: string; img: string; price: string }[] = [];
 
   /*Show menu from nav */
-  showMenu() {
+  toggleMenu() {
     this.menuInvisible = !this.menuInvisible;
   }
 
   /*Show search from nav */
-  showSearch() {
+  toggleSearch() {
     this.searchInvisible = !this.searchInvisible;
   }
 
@@ -56,4 +56,5 @@ export class NavComponent {
     this.productsFiltered = [];
     this.result = true;
   }
+  dataSession: any = false;
 }

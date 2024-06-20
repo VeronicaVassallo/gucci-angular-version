@@ -67,5 +67,6 @@ export class DataProductsService {
       price: '1200,00 €',
     },
   ];
+
   constructor() {}
 }

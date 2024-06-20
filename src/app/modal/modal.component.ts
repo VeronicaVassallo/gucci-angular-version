@@ -23,6 +23,7 @@ export class ModalComponent {
   emailInput: string = '';
   passwordInput: string = '';
   isCorrect: boolean = false; //check if user inputs are correct
+  userString: string = ''; // is used to save user logged in the session storage
 
   userFound: null | User = null;
 
@@ -39,7 +40,7 @@ export class ModalComponent {
     this.modalService.open(content);
   }
 
-  // mi salva  i valori dell'inpunt che immette l'utente
+  // saves the input values that the user enters
   onChangeEmail(e: Event) {
     this.emailInput = (<HTMLInputElement>e.target).value;
   }
@@ -50,15 +51,19 @@ export class ModalComponent {
 
   /**
    * checkUsers
-   * 1) controllare se 'utente risulta tra i registrati
-   * 2) se l'utente è effetivsmente registrato fare un secondo controllo per capire se è un admin o meno
-   * 3) se è l'admin potra vedere il bottone "aggiungi prodotto"
-   * 4) se non è admin non vedra nulla
+   * 1) check if the user is registered
+   * 2) if the user is actually registered, do a second check to understand if he is an admin or not
+   * 3) if you are the admin you will be able to see the "add product" button
+   * 4) if you are not admin you will not see the "add product" button
    *
-   * nice to have: salvare i dati dell'utente loggato nel local storage
+   *
    */
+
+  test: any = null;
+  testResult: any = null;
+
   checkUsers() {
-    //Reset userFound cosi che il dato di partenza sia sempre null
+    //Reset userFound at null
     this.userFound = null;
 
     for (let user of this.dataUser.users) {
@@ -67,11 +72,11 @@ export class ModalComponent {
         user.password === this.passwordInput
       ) {
         this.userFound = user;
-        break; //Esco dal ciclo se trovo l'utente corrispondente agli input che immetto
+        break; //exit from loop if I find the user matching the inputs I enter
       }
     }
 
-    //verifica il tipo di utente e se c'è un utente
+    //check if there is an User and the type of users (Admin or not Admin)
     if (!this.userFound) {
       this.isCorrect = false;
       alert('Non ti ho trovato tra gli utenti registrati');
@@ -80,9 +85,13 @@ export class ModalComponent {
 
       if (this.userFound.isAdmin === true) {
         this.dataUser.isAdmin();
+        this.userString = JSON.stringify(this.userFound);
+        sessionStorage.setItem('userFound', this.userString);
         alert('ADMIN');
       } else {
         this.dataUser.isNotAdmin();
+        this.userString = JSON.stringify(this.userFound);
+        sessionStorage.setItem('userFound', this.userString);
         alert('Utente normale');
       }
     }

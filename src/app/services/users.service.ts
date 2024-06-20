@@ -40,6 +40,7 @@ export class UsersService {
   isAdmin() {
     this.isAdminLogged = true;
   }
+
   getAdminValue() {
     return this.isAdminLogged;
   }

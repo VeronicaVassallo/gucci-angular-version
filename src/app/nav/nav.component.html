@@ -20,7 +20,7 @@
         </ul>
         <div
           class="close position-relative bg-dark text-light text-center"
-          (click)="showMenu()"
+          (click)="toggleMenu()"
         >
           X
         </div>
@@ -176,7 +176,7 @@
   </div>
 
   <div id="containerIconsMenu" class="d-flex">
-    <div class="m-3" *ngIf="dataUsers.getAdminValue()">
+    <div class="m-3" *ngIf="this.dataUsers.getAdminValue()">
       <button type="button" class="btn btn-outline-secondary">
         Aggiungi prodotto
       </button>
@@ -197,7 +197,7 @@
     </div>
     <app-modal></app-modal>
 
-    <div class="m-3" (click)="showSearch()">
+    <div class="m-3" (click)="toggleSearch()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -211,7 +211,7 @@
         />
       </svg>
     </div>
-    <div class="d-flex align-items-center m-3 me-2" (click)="showMenu()">
+    <div class="d-flex align-items-center m-3 me-2" (click)="toggleMenu()">
       <div class="pe-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
