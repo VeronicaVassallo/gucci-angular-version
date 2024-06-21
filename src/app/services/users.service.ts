@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-type User = {
+export type User = {
   isAdmin: boolean;
   email: string;
   password: string;

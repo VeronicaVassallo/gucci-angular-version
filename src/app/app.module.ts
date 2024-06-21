@@ -23,6 +23,7 @@ import { UsersService } from './services/users.service';
 //Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
+import { BackOfficeComponent } from './back-office/back-office.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ModalComponent } from './modal/modal.component';
     VideoSectionComponent,
     MessageBallonComponent,
     ModalComponent,
+    BackOfficeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [provideClientHydration(), DataProductsService, UsersService],

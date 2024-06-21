@@ -1,4 +1,5 @@
 <app-nav [dataParent]="notScroll"></app-nav>
+
 <app-header (scrollEvent)="onChildScroll($event)"></app-header>
 
 <main>
@@ -9,3 +10,4 @@
 
 <app-footer></app-footer>
 <app-message-ballon></app-message-ballon>
+<router-outlet></router-outlet>

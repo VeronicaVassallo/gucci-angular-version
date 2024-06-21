@@ -176,11 +176,16 @@
   </div>
 
   <div id="containerIconsMenu" class="d-flex">
-    <div class="m-3" *ngIf="this.dataUsers.getAdminValue()">
+    <!--Button add product-->
+    <div class="m-3 d-flex" *ngIf="this.dataUsers.getAdminValue()">
       <button type="button" class="btn btn-outline-secondary">
-        Aggiungi prodotto
+        <a routerLink="backoffice" routerLinkActive="active">back-office</a>
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        <a routerLink="/">indietro</a>
       </button>
     </div>
+
     <div class="m-3">
       <svg
         xmlns="http://www.w3.org/2000/svg"
