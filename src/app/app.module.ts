@@ -23,9 +23,10 @@ import { SessionService } from './services/session.service';
 
 //Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './modal/modal.component';
+
 import { BackOfficeComponent } from './back-office/back-office.component';
 import { HomeComponent } from './home/home.component';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,9 @@ import { HomeComponent } from './home/home.component';
     SecondSectionComponent,
     VideoSectionComponent,
     MessageBallonComponent,
-    ModalComponent,
     BackOfficeComponent,
     HomeComponent,
+    ModalLoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [

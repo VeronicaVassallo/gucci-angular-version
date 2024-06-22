@@ -1,25 +1,13 @@
 import { Component } from '@angular/core';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-
-//services
-import { UsersService } from '../services/users.service';
-
-type User = {
-  isAdmin: boolean;
-  email: string;
-  password: string;
-  nameUser: string;
-  surnameUser: string;
-  img: string;
-};
+import { User, UsersService } from '../services/users.service';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css',
-  providers: [NgbModalConfig, NgbModal],
+  selector: 'app-modal-login',
+  templateUrl: './modal-login.component.html',
+  styleUrl: './modal-login.component.css',
 })
-export class ModalComponent {
+export class ModalLoginComponent {
   emailInput: string = '';
   passwordInput: string = '';
   isCorrect: boolean = false; //check if user inputs are correct
