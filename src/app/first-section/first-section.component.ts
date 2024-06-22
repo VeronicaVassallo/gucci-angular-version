@@ -6,17 +6,23 @@ import { Component } from '@angular/core';
   styleUrl: './first-section.component.css',
 })
 export class FirstSectionComponent {
-  dataFirstSection: { category: string; title: string; typeSection: string }[] =
-    [
-      {
-        category: 'Uomo',
-        title: 'Pre-Fall 2024',
-        typeSection: 'ESPLORA LA COLLEZIONE UOMO',
-      },
-      {
-        category: 'Donna',
-        title: 'Pre-Fall 2024',
-        typeSection: 'ESPLORA LA COLLEZIONE Donna',
-      },
-    ];
+  listDataFirstSection: {
+    category: string;
+    title: string;
+    img: string;
+    typeSection: string;
+  }[] = [
+    {
+      category: 'Uomo',
+      title: 'Pre-Fall 2024',
+      img: 'section1-2.jpg',
+      typeSection: 'ESPLORA LA COLLEZIONE UOMO',
+    },
+    {
+      category: 'Donna',
+      title: 'Pre-Fall 2024',
+      img: 'section1-4.jpg',
+      typeSection: 'ESPLORA LA COLLEZIONE Donna',
+    },
+  ];
 }
