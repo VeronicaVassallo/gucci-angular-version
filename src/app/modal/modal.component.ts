@@ -79,17 +79,18 @@ export class ModalComponent {
     //check if there is an User and the type of users (Admin or not Admin)
     if (!this.userFound) {
       this.isCorrect = false;
+      this.dataUser.setAdminFalse();
       alert('Non ti ho trovato tra gli utenti registrati');
     } else {
       this.isCorrect = true;
 
       if (this.userFound.isAdmin === true) {
-        this.dataUser.isAdmin();
+        this.dataUser.setAdminTrue();
         this.userString = JSON.stringify(this.userFound);
         sessionStorage.setItem('userFound', this.userString);
         alert('ADMIN');
       } else {
-        this.dataUser.isNotAdmin();
+        this.dataUser.setAdminFalse();
         this.userString = JSON.stringify(this.userFound);
         sessionStorage.setItem('userFound', this.userString);
         alert('Utente normale');

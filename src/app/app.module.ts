@@ -19,11 +19,13 @@ import { MessageBallonComponent } from './message-ballon/message-ballon.componen
 //Services
 import { DataProductsService } from './services/data-products.service';
 import { UsersService } from './services/users.service';
+import { SessionService } from './services/session.service';
 
 //Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { BackOfficeComponent } from './back-office/back-office.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,15 @@ import { BackOfficeComponent } from './back-office/back-office.component';
     MessageBallonComponent,
     ModalComponent,
     BackOfficeComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
-  providers: [provideClientHydration(), DataProductsService, UsersService],
+  providers: [
+    provideClientHydration(),
+    DataProductsService,
+    UsersService,
+    SessionService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

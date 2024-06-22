@@ -34,10 +34,10 @@ export class UsersService {
 
   isAdminLogged: boolean = false;
 
-  isNotAdmin() {
+  setAdminFalse() {
     this.isAdminLogged = false;
   }
-  isAdmin() {
+  setAdminTrue() {
     this.isAdminLogged = true;
   }
 
