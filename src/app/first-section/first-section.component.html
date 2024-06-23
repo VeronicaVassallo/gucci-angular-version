@@ -1,8 +1,10 @@
 <section class="Container-fluid">
-  <!--TODO: sintetizza le due card in un unica card e ricicla i dati-->
-  <div *ngFor="let dataFirstSection of listDataFirstSection">
+  <div>
     <div id="sectionMW" class="row mt-3 text-light g-2">
-      <div class="cardMW col-12 col-md-6 col-lg-6">
+      <div
+        *ngFor="let dataFirstSection of listDataFirstSection"
+        class="cardMW col-12 col-md-6 col-lg-6"
+      >
         <div class="w-100 section-ContainerMW">
           <img
             class="w-100"
