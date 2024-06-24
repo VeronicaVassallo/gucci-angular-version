@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { environment } from '../../enviroments/enviroment';
 
 interface Product {
   id: string;
@@ -17,20 +18,17 @@ interface Product {
   styleUrls: ['./back-office.component.css'],
 })
 export class BackOfficeComponent implements OnInit {
+  url: string = environment.ANGULAR_APP_SERVER_BASE_URL;
   products: Product[] = [];
   dataFormProduct!: FormGroup;
 
   constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
-    this.productService
-      .getProducts(
-        'https://gucci-copy-angular-default-rtdb.europe-west1.firebasedatabase.app/products.json'
-      )
-      .subscribe((data: any) => {
-        this.products = Object.keys(data).map((key) => data[key]);
-        console.log(this.products);
-      });
+    this.productService.getProducts(this.url).subscribe((data: any) => {
+      this.products = Object.keys(data).map((key) => data[key]);
+      console.log(this.products);
+    });
 
     this.dataFormProduct = new FormGroup({
       id: new FormControl(null, Validators.required),
@@ -42,27 +40,28 @@ export class BackOfficeComponent implements OnInit {
     });
   }
 
-  onPostData() {
-    this.productService
-      .insertProduct(
-        'https://gucci-copy-angular-default-rtdb.europe-west1.firebasedatabase.app/products.json',
-        {
-          id: 1,
-          nameProduct: 'Borsa Piccola',
-          imgProduct:
-            'https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1683585973/752029_KHNRN_8642_001_052_0000_Light.jpg',
-          price: 1500,
-          category: 'borse',
-          description: 'asdf fgt h jklklkòl',
-        }
-      )
-      .subscribe((data) => {
-        console.log(data);
-      });
-  }
-
   onSubmitForm() {
-    console.log('Dati Form:', this.dataFormProduct);
+    debugger;
+    const formData = this.dataFormProduct.value;
+    this.productService
+      .insertProduct(this.url, {
+        id: formData.id,
+        nameProduct: formData.nameProduct,
+        imgProduct: formData.imgProduct,
+        price: formData.price,
+        category: formData.category,
+        description: formData.description,
+      })
+      .subscribe({
+        next: (data) => {
+          console.log('Dati inseriti:', data);
+          alert('Prodotto Aggiunto');
+          window.location.reload();
+        },
+        error: (error) => {
+          console.error("Errore durante l'inserimento:", error);
+        },
+      });
   }
 
   trackById(index: number, item: Product): string {
