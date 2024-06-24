@@ -31,7 +31,6 @@ export class BackOfficeComponent implements OnInit {
     });
 
     this.dataFormProduct = new FormGroup({
-      id: new FormControl(null, Validators.required),
       nameProduct: new FormControl(null, Validators.required),
       imgProduct: new FormControl(null, Validators.required),
       category: new FormControl(null, Validators.required),
@@ -41,11 +40,11 @@ export class BackOfficeComponent implements OnInit {
   }
 
   onSubmitForm() {
-    debugger;
+    const newId = generateRandomId();
     const formData = this.dataFormProduct.value;
     this.productService
       .insertProduct(this.url, {
-        id: formData.id,
+        id: newId,
         nameProduct: formData.nameProduct,
         imgProduct: formData.imgProduct,
         price: formData.price,
@@ -71,4 +70,17 @@ export class BackOfficeComponent implements OnInit {
   deleteProduct(id: string) {}
 
   editProduct(id: string) {}
+}
+//This fuction I have to remove whe I will have a real databse
+function generateRandomId(length: number = 8): string {
+  const characters =
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!$&£€#ç@';
+  const charactersLength = characters.length;
+  let randomId = '';
+
+  for (let i = 0; i < length; i++) {
+    randomId += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return randomId;
 }
