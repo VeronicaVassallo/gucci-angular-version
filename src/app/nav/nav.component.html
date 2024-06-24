@@ -35,13 +35,7 @@
     <label class="p-2" for="search">Che cosa stai cercando?</label><br />
     <div class="d-flex justify-content-between">
       <div class="ps-2">
-        <input
-          type="text"
-          name="search"
-          id="search"
-          [(ngModel)]="valueInput"
-          (ngModelChange)="onChangeValue($event)"
-        />
+        <input type="text" name="search" id="search" [(ngModel)]="valueInput" />
       </div>
       <div
         class="p-3 pt-0 mt-0 me-3 fs-8 border-bottom cursor"

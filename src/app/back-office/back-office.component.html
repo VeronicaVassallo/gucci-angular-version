@@ -1,52 +1,143 @@
-<main class="bg-dark text-light">
-  <h1>BackOffice</h1>
-  <p>
-    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-    praesentium voluptatum deleniti atque corrupti quos dolores et quas
-    molestias excepturi sint occaecati cupiditate non provident, similique sunt
-    in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-    fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-    tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-    id quod maxime placeat facere poss imus, omnis voluptas assumenda est, omnis
-    dolor repellendus. Temporibus autem quibusdam et aut offici is debitis aut
-    rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et
-    molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-    delectus, ut aut reiciendis voluptatibus maior es alias consequatur aut
-    perferendis doloribus asperiores repellat." "At vero eos et accusamus et
-    iusto odio dignissimos ducimus qui blanditiis praesentium v oluptatum
-    deleniti atque corrupti quos dolores et quas molestias excepturi sint
-    occaecati cupiditate non provident, similique sunt in culpa qui officia
-    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-    rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-    nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-    placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-    repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
-    necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-    non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-    reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
-    asperiores repellat." "At vero eos et accusamus et iusto odio dignissimos
-    ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos
-    dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-    similique sunt in culpa qui officia deserunt mollitia animi, id est laborum
-    et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-    quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda
-    est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-    debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae
-    sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-    delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-    perferendis doloribus asperiores repellat." "At vero eos et accusamus et
-    iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-    deleniti atque corrupti quos dolores et quas molestias excepturi sint
-    occaecati cupiditate non provident, similique sunt in culpa qui officia
-    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-    rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-    nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-    placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-    repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
-    necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-    non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-    reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
-    asperiores repellat."
-  </p>
+<h1 id="logo">
+  <a class="text-decoration-none text-dark" href="home">GUCCI</a>
+</h1>
+<main>
+  <h1 id="backOffice">BackOffice</h1>
+  <br />
+  <div class="mt-5 pt-5">
+    <h2>Aggiungi un prodotto:</h2>
+    <form [formGroup]="dataFormProduct" (ngSubmit)="onSubmitForm()">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>
+              <input type="text" name="id" id="id" formControlName="id" />
+              @if (!dataFormProduct.get('id')?.valid &&
+              dataFormProduct.get('id')?.touched ) {
+              <p class="text-danger">Inserisci Id</p>
+              }
+            </th>
+            <td>
+              <input
+                type="text"
+                name="nameProduct"
+                id="nameProduct"
+                formControlName="nameProduct"
+              />
+              @if (!dataFormProduct.get('nameProduct')?.valid &&
+              dataFormProduct.get('nameProduct')?.touched ) {
+              <p class="text-danger">Inserisci nome prodotto</p>
+              }
+            </td>
+            <td>
+              <input
+                type="text"
+                name="imgProduct"
+                id="imgProduct"
+                formControlName="imgProduct"
+                placeholder="Add link"
+              />
+              @if (!dataFormProduct.get('imgProduct')?.valid &&
+              dataFormProduct.get('imgProduct')?.touched ) {
+              <p class="text-danger">Inserisci immagine</p>
+              }
+            </td>
+            <td>
+              <input
+                type="text"
+                name="category"
+                id="category"
+                formControlName="category"
+              />
+              @if (!dataFormProduct.get('category')?.valid &&
+              dataFormProduct.get('category')?.touched ) {
+              <p class="text-danger">Inserisci categoria</p>
+              }
+            </td>
+            <td>
+              <input
+                type="text"
+                name="price"
+                id="price"
+                formControlName="price"
+              />
+              @if (!dataFormProduct.get('price')?.valid &&
+              dataFormProduct.get('price')?.touched ) {
+              <p class="text-danger">Inserisci prezzo</p>
+              }
+            </td>
+
+            <td>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                formControlName="description"
+              />
+              @if (!dataFormProduct.get('description')?.valid &&
+              dataFormProduct.get('description')?.touched ) {
+              <p class="text-danger">Inserisci descrizione</p>
+              }
+            </td>
+            <td>
+              <button
+                type="submit"
+                class="btn btn-success me-1"
+                [disabled]="!dataFormProduct.valid"
+              >
+                Add Product
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Image</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price €</th>
+          <th scope="col">Description</th>
+          <th scope="col">Operazioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let product of products; trackBy: trackById">
+          <tr>
+            <th>{{ product.id }}</th>
+            <td>{{ product.nameProduct }}</td>
+            <td>
+              <img
+                class="imgSize"
+                src="{{ product.imgProduct }}"
+                alt="{{ product.nameProduct }}"
+              />
+            </td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price }} €</td>
+            <td>{{ product.description }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger mb-1"
+                (click)="deleteProduct(product.id)"
+              >
+                Delete
+              </button>
+              <button
+                type="button"
+                class="btn btn-info"
+                (click)="editProduct(product.id)"
+              >
+                Edit
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
 </main>
