@@ -31,6 +31,8 @@ import { HomeComponent } from './home/home.component';
 
 //http
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     BackOfficeComponent,
     HomeComponent,
     ModalLoginComponent,
+    RegisterPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

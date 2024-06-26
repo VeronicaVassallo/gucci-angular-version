@@ -6,20 +6,11 @@
   <br />
   <div class="mt-5 pt-5">
     <h2>Aggiungi un prodotto:</h2>
+    <!--ngSubmit serve per fare prevntDeafoult...-->
     <form [formGroup]="dataFormProduct" (ngSubmit)="onSubmitForm()">
       <table class="table">
         <tbody>
           <tr>
-            <!--
-            <th>
-              <label for="id">ID</label>
-              <input type="text" name="id" id="id" formControlName="id" />
-              @if (!dataFormProduct.get('id')?.valid &&
-              dataFormProduct.get('id')?.touched ) {
-              <p class="text-danger">Inserisci Id</p>
-              }
-            </th>
-            -->
             <td>
               <label for="nameProduct">Nome</label>
               <input
@@ -33,7 +24,9 @@
               <p class="text-danger">Inserisci nome prodotto</p>
               }
             </td>
-            <td>
+            <!--REMENBER : When backand use entity with img you can remove comment-->
+            <!--
+              <td>
               <label for="imgProduct">Immagine</label>
               <input
                 type="text"
@@ -47,6 +40,8 @@
               <p class="text-danger">Inserisci immagine</p>
               }
             </td>
+            -->
+
             <td>
               <label for="category">Categoria</label>
               <input
@@ -104,12 +99,8 @@
     <table class="table">
       <thead>
         <tr>
-          <!--
-          <th scope="col">ID Code</th>
-          -->
-
           <th scope="col">Name</th>
-          <th scope="col">Image</th>
+          <th scope="col">Image default</th>
           <th scope="col">Category</th>
           <th scope="col">Price €</th>
           <th scope="col">Description</th>
@@ -117,17 +108,14 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let product of products; trackBy: trackById">
+        <ng-container *ngFor="let product of products">
           <tr>
-            <!--
-            <th>{{ product.id }}</th>
-            -->
-
             <td>{{ product.nameProduct }}</td>
             <td>
+              <!--REMENBER : When backand use entity with img you can add img of product-->
               <img
                 class="imgSize"
-                src="{{ product.imgProduct }}"
+                src="../../assets/borsa.jpg"
                 alt="{{ product.nameProduct }}"
               />
             </td>
@@ -138,17 +126,11 @@
               <button
                 type="button"
                 class="btn btn-danger mb-1"
-                (click)="deleteProduct(product.id)"
+                (click)="deleteProduct()"
               >
                 Delete
               </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                (click)="editProduct(product.id)"
-              >
-                Edit
-              </button>
+              <button type="button" class="btn btn-info">Edit</button>
             </td>
           </tr>
         </ng-container>

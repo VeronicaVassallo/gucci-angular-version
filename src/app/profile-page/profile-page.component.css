@@ -1,0 +1,10 @@
+#logo {
+  color: black;
+  font-size: 20pt;
+  letter-spacing: 10px;
+  position: fixed;
+  top: 2%;
+  left: 45%;
+  z-index: 1060;
+  font-family: "Garamond";
+}

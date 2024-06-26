@@ -1,0 +1,94 @@
+<h1 id="logo">
+  <a class="text-decoration-none text-dark" routerLink="/home">GUCCI</a>
+</h1>
+<h2 class="mt-5 pt-5 ms-5">Registrazione</h2>
+
+<div class="d-flex">
+  <form
+    [formGroup]="dataFormProduct"
+    class="ms-5"
+    (ngSubmit)="onSubmitaddProduct()"
+  >
+    <div>
+      <label for="nameUser">*Nome: </label>
+      <br />
+      <input
+        type="text"
+        name="nameUser"
+        id="nameUser"
+        formControlName="nameUser"
+      />
+      @if (!dataFormProduct.get('nameUser')?.valid &&
+      dataFormProduct.get('nameUser')?.touched ) {
+      <p class="text-danger">Inserisci nome</p>
+      }
+    </div>
+    <div>
+      <label for="surnameUser">*Cognome: </label>
+      <br />
+      <input
+        type="text"
+        name="surnameUser"
+        id="surnameUser"
+        formControlName="surnameUser"
+      />
+      @if (!dataFormProduct.get('surnameUser')?.valid &&
+      dataFormProduct.get('surnameUser')?.touched ) {
+      <p class="text-danger">Inserisci cognome</p>
+      }
+    </div>
+    <div>
+      <label for="img">Immagine profilo</label>
+      <br />
+      <input type="text" name="img" id="img" formControlName="img" />
+    </div>
+    <div>
+      <label for="adress">*Indirizzo: </label>
+      <br />
+      <input type="text" name="adress" id="adress" formControlName="adress" />
+      @if (!dataFormProduct.get('adress')?.valid &&
+      dataFormProduct.get('adress')?.touched ) {
+      <p class="text-danger">Inserisci Indirizzo</p>
+      }
+    </div>
+    <div>
+      <label for="email">*Email: </label>
+      <br />
+      <input type="email" name="email" id="email" formControlName="email" />
+      @if (!dataFormProduct.get('email')?.valid &&
+      dataFormProduct.get('email')?.touched ) {
+      <p class="text-danger">Inserisci email</p>
+      }
+    </div>
+    <div>
+      <label for="password">*Password: </label>
+      <br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+      />
+      @if (!dataFormProduct.get('password')?.valid &&
+      dataFormProduct.get('password')?.touched ) {
+      <p class="text-danger">Inserisci password</p>
+      }
+    </div>
+    <br />
+
+    <button
+      type="submit"
+      class="btn btn-success me-1"
+      [disabled]="!dataFormProduct.valid"
+    >
+      Register
+    </button>
+  </form>
+  <div class="ms-5">Prova Lista utenti attuali:</div>
+  <ul>
+    <br />
+    @for (user of listUsers; track user) {
+    <li>{{ user.nameUser }} {{ user.surnameUser }}</li>
+    }
+  </ul>
+</div>

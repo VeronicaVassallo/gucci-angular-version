@@ -16,4 +16,10 @@ export class ProductsService {
   getProducts(url: string) {
     return this.http.get(url);
   }
+
+  //delete product
+  deleteProduct(url: string, id: string) {
+    console.log('lala' + `${url}/${id}.json`);
+    return this.http.delete(`${url}/${id}.json`);
+  }
 }

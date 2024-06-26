@@ -4,9 +4,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../enviroments/enviroment';
 
 interface Product {
-  id: string;
   nameProduct: string;
-  imgProduct: string;
+  //imgProduct: string; --> REMENBER : When backand use entity with img you can remove comment
   price: number;
   category: string;
   description: string;
@@ -19,6 +18,7 @@ interface Product {
 })
 export class BackOfficeComponent implements OnInit {
   url: string = environment.ANGULAR_APP_SERVER_BASE_URL;
+  productFireBase: any;
   products: Product[] = [];
   dataFormProduct!: FormGroup;
 
@@ -27,12 +27,23 @@ export class BackOfficeComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts(this.url).subscribe((data: any) => {
       this.products = Object.keys(data).map((key) => data[key]);
-      console.log(this.products);
+      /*
+      this.proucti = lista di questo oggetto
+      questo oggetto:
+      key: key
+      data: data[key]
+
+      let keys = Object.keys(data);
+
+      */
+      this.productFireBase = data;
+      console.log('productFireBase', data);
+      console.log('prodotto che ottengo', this.products);
     });
 
     this.dataFormProduct = new FormGroup({
       nameProduct: new FormControl(null, Validators.required),
-      imgProduct: new FormControl(null, Validators.required),
+      //  imgProduct: new FormControl(null, Validators.required), --> REMENBER : When backand use entity with img you can remove comment
       category: new FormControl(null, Validators.required),
       price: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
@@ -40,13 +51,11 @@ export class BackOfficeComponent implements OnInit {
   }
 
   onSubmitForm() {
-    const newId = generateRandomId();
     const formData = this.dataFormProduct.value;
     this.productService
       .insertProduct(this.url, {
-        id: newId,
         nameProduct: formData.nameProduct,
-        imgProduct: formData.imgProduct,
+        //  imgProduct: formData.imgProduct, --> REMENBER : When backand use entity with img you can remove comment
         price: formData.price,
         category: formData.category,
         description: formData.description,
@@ -63,24 +72,17 @@ export class BackOfficeComponent implements OnInit {
       });
   }
 
-  trackById(index: number, item: Product): string {
-    return item.id;
+  deleteProduct() {
+    //REMEMBER: change data of deleteProduct when I will have a real databse
+    this.productService
+      .deleteProduct(
+        'https://gucci-copy-angular-default-rtdb.europe-west1.firebasedatabase.app/products',
+        '-O0IVmyVCiz5xSMyRQeU'
+      )
+      .subscribe((data) => {
+        console.log('data of delete product', data);
+      });
   }
-
-  deleteProduct(id: string) {}
 
   editProduct(id: string) {}
-}
-//This fuction I have to remove whe I will have a real databse
-function generateRandomId(length: number = 8): string {
-  const characters =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!$&£€#ç@';
-  const charactersLength = characters.length;
-  let randomId = '';
-
-  for (let i = 0; i < length; i++) {
-    randomId += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-
-  return randomId;
 }

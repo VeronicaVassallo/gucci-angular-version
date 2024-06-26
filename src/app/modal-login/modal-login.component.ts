@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { User, UsersService } from '../services/users.service';
+import { UsersService } from '../services/users.service';
+import { User } from '../models/users.model';
 
 @Component({
   selector: 'app-modal-login',

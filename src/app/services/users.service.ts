@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export type User = {
-  isAdmin: boolean;
-  email: string;
-  password: string;
-  nameUser: string;
-  surnameUser: string;
-  img: string;
-};
+import { User } from '../models/users.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +14,7 @@ export class UsersService {
       nameUser: 'Amministratore',
       surnameUser: 'Gucci',
       img: 'https://i.pinimg.com/736x/3b/bb/e2/3bbbe2fe4c6c20f540ba654c8af4d625.jpg',
+      adress: '',
     },
     {
       isAdmin: false,
@@ -29,8 +23,10 @@ export class UsersService {
       nameUser: 'Mario',
       surnameUser: 'Rossi',
       img: 'https://ecard.iphyto.com/assets/img/profile-img.jpg',
+      adress: 'via Roma 8, Milano',
     },
   ];
+  constructor() {}
 
   isAdminLogged: boolean = false;
 
@@ -45,5 +41,11 @@ export class UsersService {
     return this.isAdminLogged;
   }
 
-  constructor() {}
+  getUsers() {
+    return this.users;
+  }
+
+  getSpecificUser(email: string): User | undefined {
+    return this.users.find((u) => u.email === email);
+  }
 }
